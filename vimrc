@@ -1,6 +1,9 @@
 set nocp
 set directory=~/swap
 
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 "colorscheme ir_black
 
 " Manage multiple buffers
