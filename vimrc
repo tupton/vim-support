@@ -59,7 +59,7 @@ set nowrap
 " Scrolling context
 set scrolloff=3
 
-" Set leader to ,
+" Map leader to ,
 let mapleader = ","
 
 " Scrolling speed
@@ -84,15 +84,6 @@ au Syntax {cpp,c,idl} runtime syntax/doxygen.vim
 
 au BufRead,BufNewFile PKGBUILD set ts=2 sts=2 et sw=2
 au BufNewFile,BufRead .Xdefaults* set filetype=xdefaults
-
-" Tabs
-nnoremap <silent> <F2> :tabnew<CR>
-nnoremap <silent> <F3> :tabp<CR>
-nnoremap <silent> <F4> :tabn<CR>
-
-" Toggle whitespace
-set listchars=tab:>-,trail:·,eol:$
-nmap <silent> <leader>s :set nolist!<CR>
 
 " Completion
 inoremap <Nul> <C-x><C-p>
@@ -122,28 +113,4 @@ set incsearch
 
 " Enable extended % matching
 runtime macros/matchit.vim
-
-" Taglist settings
-let Tlist_Process_File_Always = 1
-let Tlist_Auto_Highlight_Tag = 1
-let Tlist_Auto_Update = 1
-let Tlist_Enable_Fold_Column = 1
-let Tlist_Highlight_Tag_On_BufEnter = 1
-let Tlist_Max_Tag_Length = 35
-let Tlist_Use_Right_Window = 1
-let Tlist_Inc_Winwidth = 0
-let Tlist_WinWidth = 40
-
-" OmniCPPComplete settings
-let OmniCpp_GlobalScopeSearch = 1
-let OmniCpp_NamespaceSearch = 1
-let OmniCpp_DisplayMode = 1
-let OmniCpp_ShowScopeInAbbr = 0
-let OmniCpp_ShowPrototypeInAbbr = 0
-let OmniCpp_ShowAccess = 1
-let OmniCpp_DefaultNamespaces = ["std"]
-let OmniCpp_MayCompleteDot = 1
-let OmniCpp_MayCompleteArrow = 1
-let OmniCpp_MayCompleteScope = 0
-let OmniCpp_SelectFirstItem = 0
 
