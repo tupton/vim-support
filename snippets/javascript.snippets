@@ -1,0 +1,79 @@
+# Documentation
+snippet ///
+	// {{{ ${1:method}
+	/**
+	 * ${4:// TODO}
+	 *
+	 */
+	$1: function(${3:parameters}) {
+		${5}
+	}${2:,}
+
+	// }}}
+# Initialize
+snippet init
+	// {{{ initialize
+	/**
+	 * Constructor
+	 *
+	 */
+	initialize: function(${1:options}) {
+		Object.bindObservers(this);
+		Object.bindCallbacks(this);
+
+		this._$1 = wack.extend({
+			${3}
+		}, $1 || {});
+
+		this.container = this._draw();
+	}${2:,}
+
+	// }}}
+# Widget
+snippet widget
+	/**
+	 * $1
+	 *
+	 */
+	
+	// TODO
+	wack.depends('Webmail.Widgets');
+
+	Webmail.Widgets.${1:NewWidget} = Webmail.Widgets.create({
+
+		// public
+		// {{{ initialize
+		/**
+		 * Constructor
+		 *
+		 */
+		initialize: function(${4:options}) {
+			Object.bindObservers(this);
+			Object.bindCallbacks(this);
+
+			this._$4 = wack.extend({
+				${5}
+			}, $4 || {});
+
+			this.container = this._draw();
+		},
+
+		// }}}
+
+		// private
+		// {{{ _draw
+		/**
+		 * Draw the widget.
+		 *
+		 * @return {HTMLElement}
+		 */
+		 _draw: function() {
+			var container = wack.Element.createHtml('<div></div>');
+			$Templates.setDom(container);
+
+			return container;
+		 }
+
+		 // }}}
+
+	}${2:, Webmail.Widgets.Superclass}${3:, true});
