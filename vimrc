@@ -1,5 +1,5 @@
 set nocp
-set directory=~/swap
+set directory=~/.swap
 
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
