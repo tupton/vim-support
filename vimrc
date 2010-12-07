@@ -1,5 +1,5 @@
 set nocp
-set directory=~/.swap
+set directory=~/.vim/swap
 
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
