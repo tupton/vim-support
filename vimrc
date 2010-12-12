@@ -2,7 +2,10 @@ set nocp
 set directory=~/.vim/swap
 
 call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+
+" The help files in the markdown plugin don't play nicely with pathogen,
+" so disable calling helptagsfor now
+"call pathogen#helptags()
 
 "colorscheme ir_black
 
