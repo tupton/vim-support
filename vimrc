@@ -1,5 +1,6 @@
 set nocp
 set directory=~/.vim/swap
+set backupskip=/tmp/*,/private/tmp/*
 
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
