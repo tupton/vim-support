@@ -85,6 +85,7 @@ au Syntax {cpp,c,idl} runtime syntax/doxygen.vim
 
 au BufRead,BufNewFile PKGBUILD set ts=2 sts=2 et sw=2
 au BufNewFile,BufRead .Xdefaults* set filetype=xdefaults
+au BufReadPost * normal `"
 
 " Completion
 inoremap <Nul> <C-x><C-p>
@@ -114,4 +115,6 @@ set incsearch
 
 " Enable extended % matching
 runtime macros/matchit.vim
+
+set switchbuf=useopen,usetab
 
