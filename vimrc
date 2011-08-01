@@ -43,7 +43,9 @@ set showmatch
 
 " Bash-like tab completion
 set wildmenu
+set wildchar=<Tab>
 set wildmode=list:longest
+set wildignore+=*.pyc,.hg,.git,.svn
 
 " Spacing and tabbing
 set smarttab
@@ -53,6 +55,16 @@ set softtabstop=4
 set shiftwidth=4
 set textwidth=100
 set nowrap
+set colorcolumn=+1
+
+" Tab navigation
+nmap <F4> :tabnew<CR>
+nmap <F5> :tabp<CR>
+nmap <F6> :tabn<CR>
+
+" NERDTree
+map <F7> :NERDTreeToggle<CR>
+let NERDTreeChDirMode = 2
 
 " Scrolling context
 set scrolloff=3
