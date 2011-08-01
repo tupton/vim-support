@@ -28,6 +28,7 @@ set number
 set cursorline
 set history=1000
 set bs=2
+set modeline
 
 " Set the terminal font encoding
 set encoding=utf-8
