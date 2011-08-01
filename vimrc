@@ -45,10 +45,6 @@ set showmatch
 set wildmenu
 set wildmode=list:longest
 
-" Mouse options
-"set mouse=a
-"set mousemodel=popup
-
 " Spacing and tabbing
 set smarttab
 set expandtab
@@ -69,6 +65,28 @@ nnoremap <C-e> 5<C-e>
 nnoremap <C-y> 5<C-y>
 
 " Filetype-specific formatting
+" From the Vim docs:
+" t   Auto-wrap text using textwidth
+"
+" c   Auto-wrap comments using textwidth, inserting the current comment
+"     leader automatically.
+"
+" r   Automatically insert the current comment leader after hitting
+"     <Enter> in Insert mode.
+"
+" o   Automatically insert the current comment leader after hitting 'o' or
+"     'O' in Normal mode.
+"
+" n   When formatting text, recognize numbered lists.  This actually uses
+"     the 'formatlistpat' option, thus any kind of list can be used.  The
+"     indent of the text after the number is used for the next line.  The
+"     default is to find a number, optionally followed by '.', ':', ')',
+"     ']' or '}'.  Note that 'autoindent' must be set too.  Doesn't work
+"     well together with "2".
+"     Example:
+"         1. the first item
+"            wraps
+"         2. the second item
 set formatoptions+=t,c,r,o,n
 
 au FileType c,cpp,h set cindent formatoptions+=ro 
@@ -86,6 +104,8 @@ au Syntax {cpp,c,idl} runtime syntax/doxygen.vim
 
 au BufRead,BufNewFile PKGBUILD set ts=2 sts=2 et sw=2
 au BufNewFile,BufRead .Xdefaults* set filetype=xdefaults
+
+" Automatically go to the last edited line on open
 au BufReadPost * normal `"
 
 " Completion
@@ -117,5 +137,6 @@ set incsearch
 " Enable extended % matching
 runtime macros/matchit.vim
 
+" Reuse open buffers and tabs
 set switchbuf=useopen,usetab
 
