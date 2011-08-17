@@ -152,3 +152,9 @@ runtime macros/matchit.vim
 " Reuse open buffers and tabs
 set switchbuf=useopen,usetab
 
+" Undo -- see http://amix.dk/blog/post/19548
+set undodir=~/.vim/undodir
+set undofile
+set undolevels = 1000 " max changes that can be undone
+set undoreload = 10000 " max lines to save for undo on buffer reload 
+
