@@ -13,6 +13,7 @@ A current list of the installed plugins. Not all are able to be installed from t
  * **markdown** -- A syntax highlighter for [markdown][] (including snippets.) 
  * **nerdcommenter** -- Keystrokes for easily commenting lines of code in multiple languages.
  * **snipmate** -- A tool for using small snippets that expand to useful chunks of text in multiple file formats.
+ * **command-t** -- Fuzzy open files quickly with minimal keystrokes
 
 [ack]: http://betterthangrep.com/ "Ack"
 [markdown]: http://daringfireball.net/projects/markdown/ "Markdown"
