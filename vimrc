@@ -62,6 +62,18 @@ nmap <F4> :tabnew<CR>
 nmap <F5> :tabp<CR>
 nmap <F6> :tabn<CR>
 
+" Split navigation
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+" Navigate soft-wrapped text
+nnoremap <Up>   gk
+nnoremap <Down> gj
+inoremap <Up>   <C-O>gk
+inoremap <Down> <C-O>gj
+
 " NERDTree
 map <F7> :NERDTreeToggle<CR>
 let NERDTreeChDirMode = 2
