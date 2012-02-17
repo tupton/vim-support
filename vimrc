@@ -1,64 +1,116 @@
+" .vimrc
+
+" Setup {{{
 set nocp
-set directory=~/.vim/swap
-set backupskip=/tmp/*,/private/tmp/*
 
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
-"colorscheme ir_black
-colorscheme hemisu
-"colorscheme molokai
-
-" Manage multiple buffers
-set hidden
-
-" Use the file's name in the title
-set title
-
-" No annoying beep
-"set visualbell
-
-" Turn on syntax highlighting
-syntax on
-
-" Background, colorscheme, etc
-set background=dark
-
-" Utility features
-set ruler
-set number
-set cursorline
-set history=1000
-set bs=2
+" Respect vim modelines
 set modeline
 
 " Set the terminal font encoding
 set encoding=utf-8
 set termencoding=utf-8
 
-" Turn plugin features on
+" Store swap away from the working directory
+set directory=~/.vim/swap
+
+" Skip backup on files in /tmp/
+set backupskip=/tmp/*,/private/tmp/*
+
+" }}}
+" Pathogen {{{
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+" }}}
+" {{{ Colors
+colorscheme hemisu
+
+"colorscheme ir_black
+"colorscheme molokai
+
+" Background, colorscheme, etc
+set background=dark
+
+" }}}
+" Utility {{{
+" Manage multiple buffers
+set hidden
+
+" Use the file's name in the title
+set title
+
+" Turn on syntax highlighting
+syntax on
+
+" Show line numbers
+set number
+
+" Highlight the line the cursor is on
+set cursorline
+
+" Command history
+set history=1000
+
+" Let backspace do what it's supposed to. (magic?)
+set bs=2
+
+" Filetype detection
 filetype on
+
+" Load filetype plugins
 filetype plugin on
+
+" Load filetype indents
 filetype indent on
+
+" Auto indent new lines
 set autoindent
+
+" Show matching braces
 set showmatch
 
-" Bash-like tab completion
+" Enable extended % matching
+runtime macros/matchit.vim
+
+" Bash-like tab completion for commands
 set wildmenu
 set wildchar=<Tab>
 set wildmode=list:longest
 set wildignore+=*.pyc,.hg,.git,.svn
 
 " Spacing and tabbing
+" Use shiftwidth and tabstop smartly
 set smarttab
+
+" Spaces
 set expandtab
+
+" Tab width
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+
 set textwidth=100
+
+" Don't wrap text
 set nowrap
+
+" Highlight the first column after the text width
 set colorcolumn=+1
 
+" Reuse open buffers and tabs
+set switchbuf=useopen,usetab
+
+" }}}
+" Undo {{{
+" -- see http://amix.dk/blog/post/19548
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=1000 " max changes that can be undone
+set undoreload=10000 " max lines to save for undo on buffer reload 
+
+" }}}
+" {{{ Navigation
 " Tab navigation
 nmap <F4> :tabnew<CR>
 nmap <F5> :tabp<CR>
@@ -70,26 +122,30 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
-" Navigate soft-wrapped text
-nnoremap <Up>   gk
-nnoremap <Down> gj
-inoremap <Up>   <C-O>gk
-inoremap <Down> <C-O>gj
-
-" NERDTree
+" }}}
+" NERDTree {{{
 map <F7> :NERDTreeToggle<CR>
 let NERDTreeChDirMode = 2
 
+" }}}
+" Scrolling {{{
 " Scrolling context
 set scrolloff=3
-
-" Map leader to ,
-let mapleader = ","
 
 " Scrolling speed
 nnoremap <C-e> 5<C-e>
 nnoremap <C-y> 5<C-y>
 
+" }}}
+" Key remaps {{{
+" Map leader to ,
+let mapleader = ","
+
+" Completion
+inoremap <Nul> <C-x><C-p>
+
+" }}}
+" Filetype-specific formatting and commands {{{
 " Filetype-specific formatting
 " From the Vim docs:
 " t   Auto-wrap text using textwidth
@@ -116,37 +172,26 @@ nnoremap <C-y> 5<C-y>
 set formatoptions+=t,c,r,o,n
 
 au FileType c,cpp,h set cindent formatoptions+=ro 
-au FileType c set omnifunc=ccomplete#Complete 
-au FileType css set omnifunc=csscomplete#CompleteCSS
-au FileType html,xhtml,xml set omnifunc=htmlcomplete#CompleteTags tw=0
-au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+au FileType html,xhtml,xml set tw=0
 au FileType make set noexpandtab shiftwidth=8
-au FileType php set omnifunc=phpcomplete#CompletePHP
-au FileType python set omnifunc=pythoncomplete#Complete et sw=4 sts=4 ts=4 ai
-au FileType ruby set omnifunc=rubycomplete#Complete
-au FileType tex SPCheck
-au FileType tex let dialect='US'
-au Syntax {cpp,c,idl} runtime syntax/doxygen.vim
+au FileType python set et sw=4 sts=4 ts=4 ai
 
-au BufRead,BufNewFile PKGBUILD set ts=2 sts=2 et sw=2
-au BufNewFile,BufRead .Xdefaults* set filetype=xdefaults
+" }}}
+" Autocommands {{{
+" Make coffeescript files on write
 au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 
 " Automatically go to the last edited line on open
 au BufReadPost * normal `"
 
-" Completion
-inoremap <Nul> <C-x><C-p>
-
-" Status line settings
+" }}}
+" Status line {{{
 set laststatus=2
 set statusline=%-3.3n\ %f%(\ %r%)%(\ %#WarningMsg#%m%0*%)%=(%l/%L,\ %c)\ %P\ [%{&encoding}:%{&fileformat}]%(\ %w%)\ %y
 set shortmess+=aI
 
-hi StatusLine term=inverse cterm=NONE ctermfg=red ctermbg=white
-hi StatusLineNC term=none cterm=NONE ctermfg=darkgray ctermbg=lightgray
-
-" Folding
+" }}}
+" Folding {{{
 if has("folding")
     set foldenable 
     set foldmethod=marker
@@ -155,21 +200,13 @@ endif
 
 hi Folded term=standout ctermfg=3 ctermbg=none
 
-" Searching & Replacing
+" }}}
+" Search {{{
 set hlsearch
 set ignorecase
 set smartcase
 set incsearch
 
-" Enable extended % matching
-runtime macros/matchit.vim
+" }}}
 
-" Reuse open buffers and tabs
-set switchbuf=useopen,usetab
-
-" Undo -- see http://amix.dk/blog/post/19548
-set undodir=~/.vim/undodir
-set undofile
-set undolevels=1000 " max changes that can be undone
-set undoreload=10000 " max lines to save for undo on buffer reload 
-
+" vim: fdm=marker
