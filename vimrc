@@ -128,6 +128,10 @@ map <F7> :NERDTreeToggle<CR>
 let NERDTreeChDirMode = 2
 
 " }}}
+" Powerline {{{
+let g:Powerline_symbols = 'unicode'
+
+" }}}
 " Scrolling {{{
 " Scrolling context
 set scrolloff=3
