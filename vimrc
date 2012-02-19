@@ -26,7 +26,6 @@ call pathogen#helptags()
 " {{{ Colors
 colorscheme hemisu
 
-"colorscheme ir_black
 "colorscheme molokai
 
 " Background, colorscheme, etc
