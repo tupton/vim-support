@@ -56,15 +56,6 @@ set history=1000
 " Let backspace do what it's supposed to. (magic?)
 set bs=2
 
-" Filetype detection
-filetype on
-
-" Load filetype plugins
-filetype plugin on
-
-" Load filetype indents
-filetype indent on
-
 " Auto indent new lines
 set autoindent
 
@@ -152,7 +143,10 @@ inoremap <Nul> <C-x><C-p>
 
 " }}}
 " Filetype-specific formatting and commands {{{
-" Filetype-specific formatting
+"
+" Load filetype plugins and indents
+filetype plugin indent on
+
 " From the Vim docs:
 " t   Auto-wrap text using textwidth
 "
