@@ -143,6 +143,9 @@ let mapleader = ","
 " Completion
 inoremap <Nul> <C-x><C-p>
 
+" Edit and source this file
+nmap <silent> <leader>ev :split $MYVIMRC<CR>
+nmap <silent> <leader>sv :source $MYVIMRC<CR>
 " }}}
 " Filetype-specific formatting and commands {{{
 "
