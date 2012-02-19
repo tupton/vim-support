@@ -22,3 +22,6 @@
 [submodule "bundle/hemisu"]
 	path = bundle/hemisu
 	url = https://github.com/noahfrederick/Hemisu.git
+[submodule "bundle/molokai"]
+	path = bundle/molokai
+	url = https://github.com/tomasr/molokai.git
