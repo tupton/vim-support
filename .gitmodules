@@ -19,3 +19,6 @@
 [submodule "bundle/pathogen"]
 	path = bundle/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
+[submodule "bundle/hemisu"]
+	path = bundle/hemisu
+	url = https://github.com/noahfrederick/Hemisu.git
