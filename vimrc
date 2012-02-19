@@ -15,6 +15,8 @@ set directory=~/.vim/swap
 
 " Skip backup on files in /tmp/
 set backupskip=/tmp/*,/private/tmp/*
+" Actually, skip backup entirely. It's annoying.
+set nobackup
 
 " }}}
 " Pathogen {{{
