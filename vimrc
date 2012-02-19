@@ -1,7 +1,7 @@
 " .vimrc
 
 " Setup {{{
-set nocp
+set nocompatible
 
 " Respect vim modelines
 set modeline
@@ -17,6 +17,9 @@ set directory=~/.vim/swap
 set backupskip=/tmp/*,/private/tmp/*
 " Actually, skip backup entirely. It's annoying.
 set nobackup
+
+" Manage multiple buffers
+set hidden
 
 " }}}
 " Pathogen {{{
@@ -35,9 +38,6 @@ set background=dark
 
 " }}}
 " Utility {{{
-" Manage multiple buffers
-set hidden
-
 " Use the file's name in the title
 set title
 
@@ -53,8 +53,8 @@ set cursorline
 " Command history
 set history=1000
 
-" Let backspace do what it's supposed to. (magic?)
-set bs=2
+" Let backspace do what it's supposed to: allow backspace over indent, eol, and start of an insert
+set backspace=2
 
 " Auto indent new lines
 set autoindent
@@ -202,10 +202,20 @@ hi Folded term=standout ctermfg=3 ctermbg=none
 
 " }}}
 " Search {{{
+" Highlight searches
 set hlsearch
+
+" Ignore case by default
 set ignorecase
+
+" Smart case is case-insensitive if the term is all lower-case
 set smartcase
+
+" Search as you type
 set incsearch
+
+" Wrap around the file when searching
+set wrapscan
 
 " }}}
 
