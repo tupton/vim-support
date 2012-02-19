@@ -94,6 +94,8 @@ set colorcolumn=+1
 " Reuse open buffers and tabs
 set switchbuf=useopen,usetab
 
+" Show which mode we're in
+set showmode
 " }}}
 " Undo {{{
 " -- see http://amix.dk/blog/post/19548
