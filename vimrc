@@ -21,6 +21,8 @@ set nobackup
 " Manage multiple buffers
 set hidden
 
+" Shorten a lot of notifications and suppress the splash screen
+set shortmess+=aI
 " }}}
 " Pathogen {{{
 runtime bundle/pathogen/autoload/pathogen.vim
