@@ -125,6 +125,12 @@ map <F7> :NERDTreeToggle<CR>
 let NERDTreeChDirMode = 2
 
 " }}}
+" Status line {{{
+set laststatus=2
+" Disable this status line when using Powerline
+"set statusline=%-3.3n\ %f%(\ %r%)%(\ %#WarningMsg#%m%0*%)%=(%l/%L,\ %c)\ %P\ [%{&encoding}:%{&fileformat}]%(\ %w%)\ %y
+
+" }}}
 " Powerline {{{
 let g:Powerline_symbols = 'unicode'
 
@@ -190,12 +196,6 @@ au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 
 " Automatically go to the last edited line on open
 au BufReadPost * normal `"
-
-" }}}
-" Status line {{{
-set laststatus=2
-set statusline=%-3.3n\ %f%(\ %r%)%(\ %#WarningMsg#%m%0*%)%=(%l/%L,\ %c)\ %P\ [%{&encoding}:%{&fileformat}]%(\ %w%)\ %y
-set shortmess+=aI
 
 " }}}
 " Folding {{{
