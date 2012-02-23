@@ -23,6 +23,10 @@ set hidden
 
 " Shorten a lot of notifications and suppress the splash screen
 set shortmess+=aI
+
+" Turn on syntax highlighting
+syntax on
+
 " }}}
 " Pathogen {{{
 runtime bundle/pathogen/autoload/pathogen.vim
@@ -31,20 +35,17 @@ call pathogen#helptags()
 
 " }}}
 " {{{ Colors
+" Background, colorscheme, etc
+set background=dark
+
 colorscheme hemisu
 
 "colorscheme molokai
-
-" Background, colorscheme, etc
-set background=dark
 
 " }}}
 " Utility {{{
 " Use the file's name in the title
 set title
-
-" Turn on syntax highlighting
-syntax on
 
 " Show line numbers
 set number
