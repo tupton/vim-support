@@ -155,6 +155,19 @@ inoremap <Nul> <C-x><C-p>
 " Edit and source this file
 nmap <silent> <leader>ev :split $MYVIMRC<CR>
 nmap <silent> <leader>sv :source $MYVIMRC<CR>
+
+" Better window switching
+map <Leader>w <C-w>w
+
+" Bind :Q to :q
+command! Q q
+
+" Bind :W to :w
+command! W w
+
+" Disable going to Ex mode
+map Q <Nop>
+
 " }}}
 " Filetype-specific formatting and commands {{{
 "
