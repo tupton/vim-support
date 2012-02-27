@@ -168,6 +168,11 @@ command! W w
 " Disable going to Ex mode
 map Q <Nop>
 
+" Remove annoying F1 help
+inoremap <F1> <nop>
+nnoremap <F1> <nop>
+vnoremap <F1> <nop>
+
 " }}}
 " Filetype-specific formatting and commands {{{
 "
