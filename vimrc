@@ -158,6 +158,7 @@ nmap <silent> <leader>sv :source $MYVIMRC<CR>
 
 " Better window switching
 map <Leader>w <C-w>w
+map <Leader>W <C-w>W
 
 " Bind :Q to :q
 command! Q q
