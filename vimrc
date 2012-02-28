@@ -200,7 +200,7 @@ filetype plugin indent on
 set formatoptions+=t,c,r,o,n
 
 au FileType c,cpp,h set cindent formatoptions+=ro 
-au FileType html,xhtml,xml set tw=0
+au FileType xhtml,xml set tw=0
 au FileType make set noexpandtab shiftwidth=8
 au FileType python set et sw=4 sts=4 ts=4 ai
 au FileType css setlocal equalprg=csstidy\ -\ --silent=true\ --preserve_css=true
