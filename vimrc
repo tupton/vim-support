@@ -108,19 +108,6 @@ set undolevels=1000 " max changes that can be undone
 set undoreload=10000 " max lines to save for undo on buffer reload 
 
 " }}}
-" {{{ Navigation
-" Tab navigation
-nmap <F4> :tabnew<CR>
-nmap <F5> :tabp<CR>
-nmap <F6> :tabn<CR>
-
-" Split navigation
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-
-" }}}
 " NERDTree {{{
 map <F7> :NERDTreeToggle<CR>
 let NERDTreeChDirMode = 2
@@ -156,9 +143,20 @@ inoremap <Nul> <C-x><C-p>
 nmap <silent> <leader>ev :split $MYVIMRC<CR>
 nmap <silent> <leader>sv :source $MYVIMRC<CR>
 
-" Better window switching
+" Better window management and navigation
 map <Leader>w <C-w>w
 map <Leader>W <C-w>W
+map <Leader>_ <C-w>_
+
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+" Tab navigation
+nmap <F4> :tabnew<CR>
+nmap <F5> :tabp<CR>
+nmap <F6> :tabn<CR>
 
 " Bind :Q to :q
 command! Q q
