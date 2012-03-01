@@ -158,10 +158,8 @@ nmap <F4> :tabnew<CR>
 nmap <F5> :tabp<CR>
 nmap <F6> :tabn<CR>
 
-" Bind :Q to :q
+" Bind dumb uppercase commands to their useful lowercase equivalents
 command! Q q
-
-" Bind :W to :w
 command! W w
 
 " Disable going to Ex mode
