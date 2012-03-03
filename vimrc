@@ -13,10 +13,11 @@ set termencoding=utf-8
 " Store swap away from the working directory
 set directory=~/.vim/swap
 
-" Skip backup on files in /tmp/
-set backupskip=/tmp/*,/private/tmp/*
-" Actually, skip backup entirely. It's annoying.
+" Skip backup entirely. It's annoying.
 set nobackup
+if has("writebackup")
+    set nowritebackup
+endif
 
 " Manage multiple buffers
 set hidden
