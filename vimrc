@@ -106,8 +106,19 @@ set colorcolumn=+1
 " Reuse open buffers and tabs
 set switchbuf=useopen,usetab
 
-" Show which mode we're in
-set showmode
+" {{{ Commands
+" Note that these options don't really matter when using vim-powerline.
+if has("cmdline_info")
+    " Show line and column information
+    set ruler
+
+    " Show command information in the status
+    set showcmd
+
+    " Show which mode we're in
+    set showmode
+endif
+
 " }}}
 " {{{ Undo
 " -- see http://amix.dk/blog/post/19548
