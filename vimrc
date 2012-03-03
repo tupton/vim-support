@@ -37,11 +37,16 @@ silent! call pathogen#helptags()
 " }}}
 " {{{ Colors
 " Background, colorscheme, etc
-set background=dark
-
-"colorscheme hemisu
-"colorscheme molokai
-colorscheme sahara
+if has("syntax")
+    syntax enable
+    set background=dark
+    "colorscheme hemisu
+    "colorscheme molokai
+    silent! colorscheme sahara
+    if has("folding")
+        set fillchars=diff:\ ,fold:\ ,vert:\ 
+    endif
+endif
 
 " }}}
 " Utility {{{
