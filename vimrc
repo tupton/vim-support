@@ -1,6 +1,6 @@
 " .vimrc
 
-" Setup {{{
+" {{{ Setup
 set nocompatible
 
 " Respect vim modelines
@@ -29,7 +29,7 @@ set shortmess+=aI
 syntax on
 
 " }}}
-" Pathogen {{{
+" {{{ Pathogen
 runtime! bundle/pathogen/autoload/pathogen.vim
 silent! call pathogen#infect()
 silent! call pathogen#helptags()
@@ -106,7 +106,7 @@ set switchbuf=useopen,usetab
 " Show which mode we're in
 set showmode
 " }}}
-" Undo {{{
+" {{{ Undo
 " -- see http://amix.dk/blog/post/19548
 set undodir=~/.vim/undodir
 set undofile
@@ -114,22 +114,22 @@ set undolevels=1000 " max changes that can be undone
 set undoreload=10000 " max lines to save for undo on buffer reload 
 
 " }}}
-" NERDTree {{{
+" {{{ NERDTree
 map <F7> :NERDTreeToggle<CR>
 let NERDTreeChDirMode = 2
 
 " }}}
-" Status line {{{
+" {{{ Status line
 set laststatus=2
 " Disable this status line when using Powerline
 "set statusline=%-3.3n\ %f%(\ %r%)%(\ %#WarningMsg#%m%0*%)%=(%l/%L,\ %c)\ %P\ [%{&encoding}:%{&fileformat}]%(\ %w%)\ %y
 
 " }}}
-" Powerline {{{
+" {{{ Powerline
 let g:Powerline_symbols = 'unicode'
 
 " }}}
-" Scrolling {{{
+" {{{ Scrolling
 " Scrolling context
 set scrolloff=3
 
@@ -138,7 +138,7 @@ nnoremap <C-e> 5<C-e>
 nnoremap <C-y> 5<C-y>
 
 " }}}
-" Key remaps {{{
+" {{{ Key remaps
 " Map leader to ,
 let mapleader = ","
 
@@ -184,7 +184,7 @@ nnoremap <F1> <nop>
 vnoremap <F1> <nop>
 
 " }}}
-" Filetype-specific formatting and commands {{{
+" {{{ Filetype-specific formatting and commands
 "
 " Load filetype plugins and indents
 filetype plugin indent on
@@ -220,7 +220,7 @@ au FileType python set et sw=4 sts=4 ts=4 ai
 au FileType css setlocal equalprg=csstidy\ -\ --silent=true\ --preserve_css=true
 
 " }}}
-" Autocommands {{{
+" {{{ Autocommands
 " Make coffeescript files on write
 au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 
@@ -228,7 +228,7 @@ au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 au BufReadPost * normal `"
 
 " }}}
-" Folding {{{
+" {{{ Folding
 if has("folding")
     set foldenable 
     set foldmethod=marker
@@ -238,7 +238,7 @@ endif
 hi Folded term=standout ctermfg=3 ctermbg=none
 
 " }}}
-" Search {{{
+" {{{ Search
 " Highlight searches
 set hlsearch
 
