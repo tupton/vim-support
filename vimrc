@@ -38,9 +38,9 @@ silent! call pathogen#helptags()
 " Background, colorscheme, etc
 set background=dark
 
-colorscheme hemisu
-
+"colorscheme hemisu
 "colorscheme molokai
+colorscheme sahara
 
 " }}}
 " Utility {{{
