@@ -6,9 +6,12 @@ set nocompatible
 " Respect vim modelines
 set modeline
 
+" {{{ Encoding
 " Set the terminal font encoding
 set encoding=utf-8
 set termencoding=utf-8
+
+" }}}
 
 " Store swap away from the working directory
 set directory=~/.vim/swap
