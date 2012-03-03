@@ -1,78 +1,92 @@
 " .vimrc
 
-" Setup {{{
+" {{{ Setup
 set nocompatible
-
-" Respect vim modelines
-set modeline
-
-" Set the terminal font encoding
-set encoding=utf-8
-set termencoding=utf-8
-
-" Store swap away from the working directory
-set directory=~/.vim/swap
-
-" Skip backup on files in /tmp/
-set backupskip=/tmp/*,/private/tmp/*
-" Actually, skip backup entirely. It's annoying.
-set nobackup
 
 " Manage multiple buffers
 set hidden
 
-" Shorten a lot of notifications and suppress the splash screen
-set shortmess+=aI
-
-" Turn on syntax highlighting
-syntax on
+" Map leader to ,
+let mapleader = ","
 
 " }}}
-" Pathogen {{{
+" {{{ Pathogen
 runtime! bundle/pathogen/autoload/pathogen.vim
 silent! call pathogen#infect()
 silent! call pathogen#helptags()
 
 " }}}
-" {{{ Colors
-" Background, colorscheme, etc
-set background=dark
 
-colorscheme hemisu
+" {{{ Autocommands
+if has("autocmd")
+    " Make coffeescript files on write
+    au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 
-"colorscheme molokai
+    " Automatically go to the last edited line on open
+    au BufReadPost * normal `"
+endif
 
 " }}}
-" Utility {{{
-" Use the file's name in the title
-set title
+" {{{ Backups
+" Skip backup entirely. It's annoying.
+set nobackup
+if has("writebackup")
+    set nowritebackup
+endif
 
-" Show line numbers
-set number
+" }}}
+" {{{ Colors
+if has("syntax")
+    syntax enable
 
-" Highlight the line the cursor is on
-set cursorline
+    set background=dark
 
-" Command history
-set history=1000
+    "silent! colorscheme hemisu
+    "silent! colorscheme molokai
+    silent! colorscheme sahara
 
-" Let backspace do what it's supposed to: allow backspace over indent, eol, and start of an insert
-set backspace=2
+    if has("folding")
+        set fillchars=diff:\ ,fold:\ ,vert:\ 
+    endif
+endif
 
+" }}}
+" {{{ Commands
+" Note that these options don't really matter when using vim-powerline.
+if has("cmdline_info")
+    " Show line and column information
+    set ruler
+
+    " Show command information in the status
+    set showcmd
+
+    " Show which mode we're in
+    set showmode
+endif
+
+" }}}
+" {{{ Encoding
+" Set the terminal font encoding
+set encoding=utf-8
+set termencoding=utf-8
+
+" }}}
+" {{{ Folding
+if has("folding")
+    set foldenable 
+    set foldmethod=marker
+    set foldopen=hor,mark,search,tag,undo
+endif
+
+hi Folded term=standout ctermfg=3 ctermbg=none
+
+" }}}
+" {{{ Formatting
 " Auto indent new lines
 set autoindent
 
 " Show matching braces
 set showmatch
-
-" Enable extended % matching
-runtime macros/matchit.vim
-
-" Bash-like tab completion for commands
-set wildmenu
-set wildchar=<Tab>
-set wildmode=list:longest
-set wildignore+=*.pyc,.hg,.git,.svn
 
 " Spacing and tabbing
 " Use shiftwidth and tabstop smartly
@@ -94,85 +108,6 @@ set nowrap
 " Highlight the first column after the text width
 set colorcolumn=+1
 
-" Reuse open buffers and tabs
-set switchbuf=useopen,usetab
-
-" Show which mode we're in
-set showmode
-" }}}
-" Undo {{{
-" -- see http://amix.dk/blog/post/19548
-set undodir=~/.vim/undodir
-set undofile
-set undolevels=1000 " max changes that can be undone
-set undoreload=10000 " max lines to save for undo on buffer reload 
-
-" }}}
-" NERDTree {{{
-map <F7> :NERDTreeToggle<CR>
-let NERDTreeChDirMode = 2
-
-" }}}
-" Status line {{{
-set laststatus=2
-" Disable this status line when using Powerline
-"set statusline=%-3.3n\ %f%(\ %r%)%(\ %#WarningMsg#%m%0*%)%=(%l/%L,\ %c)\ %P\ [%{&encoding}:%{&fileformat}]%(\ %w%)\ %y
-
-" }}}
-" Powerline {{{
-let g:Powerline_symbols = 'unicode'
-
-" }}}
-" Scrolling {{{
-" Scrolling context
-set scrolloff=3
-
-" Scrolling speed
-nnoremap <C-e> 5<C-e>
-nnoremap <C-y> 5<C-y>
-
-" }}}
-" Key remaps {{{
-" Map leader to ,
-let mapleader = ","
-
-" Completion
-inoremap <Nul> <C-x><C-p>
-
-" Edit and source this file
-nmap <silent> <leader>ev :split $MYVIMRC<CR>
-nmap <silent> <leader>sv :source $MYVIMRC<CR>
-
-" Better window management and navigation
-map <Leader>w <C-w>w
-map <Leader>W <C-w>W
-map <Leader>_ <C-w>_
-
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-
-" Tab navigation
-nmap <F4> :tabnew<CR>
-nmap <F5> :tabp<CR>
-nmap <F6> :tabn<CR>
-
-" Bind dumb uppercase commands to their useful lowercase equivalents
-command! Q q
-command! W w
-
-" Disable going to Ex mode
-map Q <Nop>
-
-" Remove annoying F1 help
-inoremap <F1> <nop>
-nnoremap <F1> <nop>
-vnoremap <F1> <nop>
-
-" }}}
-" Filetype-specific formatting and commands {{{
-"
 " Load filetype plugins and indents
 filetype plugin indent on
 
@@ -207,39 +142,203 @@ au FileType python set et sw=4 sts=4 ts=4 ai
 au FileType css setlocal equalprg=csstidy\ -\ --silent=true\ --preserve_css=true
 
 " }}}
-" Autocommands {{{
-" Make coffeescript files on write
-au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
-
-" Automatically go to the last edited line on open
-au BufReadPost * normal `"
+" {{{ History
+" Command history
+set history=1000
 
 " }}}
-" Folding {{{
-if has("folding")
-    set foldenable 
-    set foldmethod=marker
-    set foldopen=hor,mark,search,tag,undo
+" {{{ Key remaps
+" Completion
+inoremap <Nul> <C-x><C-p>
+
+" Edit and source this file
+nmap <silent> <leader>ev :split $MYVIMRC<CR>
+nmap <silent> <leader>sv :source $MYVIMRC<CR>
+
+" Better window management and navigation
+map <Leader>w <C-w>w
+map <Leader>W <C-w>W
+map <Leader>_ <C-w>_
+
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+" Tab navigation
+nmap <F4> :tabnew<CR>
+nmap <F5> :tabp<CR>
+nmap <F6> :tabn<CR>
+
+" Bind dumb uppercase commands to their useful lowercase equivalents
+if has("user_commands")
+    command! -bang E e<bang>
+    command! -bang Q q<bang>
+    command! -bang W w<bang>
+    command! -bang QA qa<bang>
+    command! -bang Qa qa<bang>
+    command! -bang Wa wa<bang>
+    command! -bang WA wa<bang>
+    command! -bang Wq wq<bang>
+    command! -bang WQ wq<bang>
 endif
 
-hi Folded term=standout ctermfg=3 ctermbg=none
+" Make Y act like other uppercase commands
+nnoremap Y y$
+
+" Disable going to Ex mode
+map Q <Nop>
+
+" Remove annoying F1 help
+noremap <F1> <nop>
+
+" Disable trying to look up things that Google is better for
+nnoremap K <no>
 
 " }}}
-" Search {{{
-" Highlight searches
-set hlsearch
+" {{{ List
+    set nolist
+    nnoremap <leader>l :set list!<CR>
 
-" Ignore case by default
-set ignorecase
+" }}}
+" {{{ Matching
+" Enable extended % matching
+silent! runtime macros/matchit.vim
 
-" Smart case is case-insensitive if the term is all lower-case
-set smartcase
+" }}}
+" {{{ Messages
+" Shorten a lot of notifications and suppress the splash screen
+set shortmess+=aI
 
-" Search as you type
-set incsearch
+" }}}
+" {{{ NERDTree
+map <F7> :NERDTreeToggle<CR>
+let NERDTreeChDirMode = 2
 
-" Wrap around the file when searching
-set wrapscan
+" }}}
+" {{{ Numbers
+" Show line numbers
+set number
+nnoremap <leader>n :set number!<CR>
+
+" }}}
+" {{{ Paste
+set nopaste
+nnoremap <leader>p :set paste!<CR>
+
+" }}}
+" {{{ Powerline
+let g:Powerline_symbols = 'unicode'
+
+" }}}
+" {{{ Scrolling
+" Scrolling context
+set scrolloff=3
+set sidescrolloff=10
+
+" Scrolling speed
+nnoremap <C-e> 5<C-e>
+nnoremap <C-y> 5<C-y>
+
+" }}}
+" {{{ Search
+if has("extra_search")
+    " Highlight searches
+    set hlsearch
+
+    " Smart case is case-insensitive if the term is all lower-case
+    set smartcase
+
+    " Search as you type
+    set incsearch
+
+    " Wrap around the file when searching
+    set wrapscan
+
+    nnoremap <leader>h :set hlsearch!<CR>
+    nnoremap <leader>i :set incsearch!<CR>
+    nnoremap <C-l> :nohlsearch<CR><C-l>
+
+    if has("autocmd")
+        augroup vimrc
+            autocmd!
+            silent! autocmd InsertEnter * setlocal nohlsearch 
+            silent! autocmd InsertLeave * setlocal hlsearch
+        augroup END
+    endif
+endif
+" }}}
+" {{{ Spelling
+if has("spell")
+    set spelllang=en_us
+    nnoremap <leader>s :set spell!<CR>
+endif
+
+" }}}
+" {{{ Status line
+set laststatus=2
+" Disable this status line when using Powerline
+"set statusline=%-3.3n\ %f%(\ %r%)%(\ %#WarningMsg#%m%0*%)%=(%l/%L,\ %c)\ %P\ [%{&encoding}:%{&fileformat}]%(\ %w%)\ %y
+
+" }}}
+" {{{ Swap
+set noswapfile
+
+" }}}
+" {{{ Terminal
+
+" Better redrawing for large files
+set ttyfast
+
+" Disable the vbell
+set visualbell t_vb=
+
+" }}}
+" {{{ Undo
+" -- see http://amix.dk/blog/post/19548
+set undodir=~/.vim/undodir
+set undofile
+
+" max changes that can be undone
+set undolevels=1000
+
+" max lines to save for undo on buffer reload 
+set undoreload=10000
+
+" }}}
+" {{{ Utility
+" Respect vim modelines
+set modeline
+
+" Use the file's name in the title
+set title
+
+" Highlight the line the cursor is on
+set cursorline
+
+" Let backspace do what it's supposed to: allow backspace over indent, eol, and start of an insert
+set backspace=indent,eol,start
+
+" Reuse open buffers and tabs
+set switchbuf=useopen,usetab
+
+" }}}
+" {{{ Wildmenu
+if has("wildmenu")
+    " Bash-like tab completion for commands
+    set wildmenu
+    set wildmode=longest:list
+    set wildchar=<Tab>
+    if has("wildignore")
+        set wildignore+=*.a,*.o,*.pyc
+        set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
+        set wildignore+=.DS_Store,.git,.hg,.svn
+        set wildignore+=*~,*.swp,*.tmp
+    endif
+    if exists("&wildignorecase")
+        set wildignorecase
+    endif
+endif
 
 " }}}
 
