@@ -24,6 +24,9 @@ if has("autocmd")
 
     " Automatically go to the last edited line on open
     au BufReadPost * normal `"
+
+    au WinLeave * set nocursorline
+    au WinEnter * set cursorline
 endif
 
 " }}}
