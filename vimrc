@@ -47,10 +47,6 @@ if has("syntax")
     "silent! colorscheme hemisu
     "silent! colorscheme molokai
     silent! colorscheme sahara
-
-    if has("folding")
-        set fillchars=diff:\ ,fold:\ ,vert:\ 
-    endif
 endif
 
 " }}}
@@ -79,6 +75,7 @@ if has("folding")
     set foldenable 
     set foldmethod=marker
     set foldopen=hor,mark,search,tag,undo
+    set fillchars=diff:\ ,fold:\ ,vert:\ 
 endif
 
 hi Folded term=standout ctermfg=3 ctermbg=none
