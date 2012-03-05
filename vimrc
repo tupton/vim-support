@@ -258,14 +258,6 @@ if has("extra_search")
     nnoremap <leader>h :set hlsearch!<CR>
     nnoremap <leader>i :set incsearch!<CR>
     nnoremap <C-l> :nohlsearch<CR><C-l>
-
-    if has("autocmd")
-        augroup vimrc
-            autocmd!
-            silent! autocmd InsertEnter * setlocal nohlsearch 
-            silent! autocmd InsertLeave * setlocal hlsearch
-        augroup END
-    endif
 endif
 " }}}
 " {{{ Spelling
