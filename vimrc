@@ -47,6 +47,7 @@ if has("syntax")
     "silent! colorscheme hemisu
     "silent! colorscheme molokai
     silent! colorscheme sahara
+    "silent! colorscheme solarized
 endif
 
 " }}}
