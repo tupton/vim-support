@@ -49,3 +49,6 @@
 [submodule "bundle/solarized"]
 	path = bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/change-inside-surroundings"]
+	path = bundle/change-inside-surroundings
+	url = https://github.com/briandoll/change-inside-surroundings.vim.git
