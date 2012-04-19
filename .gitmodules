@@ -52,3 +52,6 @@
 [submodule "bundle/change-inside-surroundings"]
 	path = bundle/change-inside-surroundings
 	url = https://github.com/briandoll/change-inside-surroundings.vim.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
