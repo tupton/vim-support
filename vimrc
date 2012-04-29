@@ -265,7 +265,7 @@ endif
 " {{{ Spelling
 if has("spell")
     set spelllang=en_us
-    nnoremap <leader>s :set spell!<CR>
+    nnoremap <leader>sp :set spell!<CR>
 endif
 
 " }}}
