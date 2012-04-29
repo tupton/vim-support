@@ -279,6 +279,10 @@ set laststatus=2
 set noswapfile
 
 " }}}
+" {{{ Syntastic
+let g:syntastic_javascript_checker = "jshint"
+
+" }}}
 " {{{ Terminal
 
 " Better redrawing for large files
