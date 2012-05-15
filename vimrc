@@ -16,7 +16,10 @@ silent! call pathogen#infect()
 silent! call pathogen#helptags()
 
 " }}}
+" {{{ Ack
+let g:ackprg="ack --noenv -H --nocolor --nogroup --column --smart-case"
 
+" }}}
 " {{{ Autocommands
 if has("autocmd")
     " Make coffeescript files on write
