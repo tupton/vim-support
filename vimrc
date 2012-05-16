@@ -1,6 +1,7 @@
 " .vimrc
 
 " {{{ Setup
+" Of course
 set nocompatible
 
 " Manage multiple buffers
@@ -11,12 +12,16 @@ let mapleader = ","
 
 " }}}
 " {{{ Pathogen
+" Store pathogen itself in bundle/
 runtime! bundle/pathogen/autoload/pathogen.vim
+
+" Start it up
 silent! call pathogen#infect()
 silent! call pathogen#helptags()
 
 " }}}
 " {{{ Ack
+" Skip normal config, show filenames, no color, one result per line, show column numbers, smart case
 let g:ackprg="ack --noenv -H --nocolor --nogroup --column --smart-case"
 
 " }}}
@@ -28,6 +33,7 @@ if has("autocmd")
     " Automatically go to the last edited line on open
     au BufReadPost * normal `"
 
+    " Only show cursorline in active windows
     au WinLeave * set nocursorline
     au WinEnter * set cursorline
 endif
@@ -75,6 +81,7 @@ set termencoding=utf-8
 
 " }}}
 " {{{ Folding
+" Fold with triple curly braces, fill with spaces
 if has("folding")
     set foldenable 
     set foldmethod=marker
@@ -175,9 +182,9 @@ noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
 " Tab navigation
-nmap <F4> :tabnew<CR>
-nmap <F5> :tabp<CR>
-nmap <F6> :tabn<CR>
+" nmap <F4> :tabnew<CR>
+" nmap <F5> :tabp<CR>
+" nmap <F6> :tabn<CR>
 
 " Bind dumb uppercase commands to their useful lowercase equivalents
 if has("user_commands")
@@ -206,8 +213,9 @@ nnoremap K <no>
 
 " }}}
 " {{{ List
-    set nolist
-    nnoremap <leader>l :set list!<CR>
+" Toggle invisibles, hide by default
+set nolist
+nnoremap <leader>l :set list!<CR>
 
 " }}}
 " {{{ Matching
@@ -222,6 +230,8 @@ set shortmess+=aI
 " }}}
 " {{{ NERDTree
 map <F7> :NERDTreeToggle<CR>
+
+" Change the working directory to the top NERDTree directory
 let NERDTreeChDirMode = 2
 
 " }}}
@@ -237,13 +247,14 @@ nnoremap <leader>p :set paste!<CR>
 
 " }}}
 " {{{ Powerline
+" Fancy powerline, but not with that fancy font
 let g:Powerline_symbols = 'unicode'
 
 " }}}
 " {{{ Scrolling
-" Scrolling context
+" Scrolling context; lines/columns of buffer while scrolling
 set scrolloff=3
-set sidescrolloff=10
+set sidescrolloff=3
 
 " Scrolling speed
 nnoremap <C-e> 5<C-e>
@@ -254,6 +265,7 @@ nnoremap <C-y> 5<C-y>
 if has("extra_search")
     " Highlight searches
     set hlsearch
+    nnoremap <leader>h :nohlsearch<CR>
 
     " Be smart about searching case-sensitively
     set smartcase
@@ -261,14 +273,12 @@ if has("extra_search")
 
     " Search as you type
     set incsearch
+    nnoremap <leader>i :set incsearch!<CR>
 
     " Wrap around the file when searching
     set wrapscan
-
-    nnoremap <leader>h :set hlsearch!<CR>
-    nnoremap <leader>i :set incsearch!<CR>
-    nnoremap <C-l> :nohlsearch<CR><C-l>
 endif
+
 " }}}
 " {{{ Spelling
 if has("spell")
@@ -278,17 +288,22 @@ endif
 
 " }}}
 " {{{ Status line
+" Always show the status line
 set laststatus=2
 " Disable this status line when using Powerline
 "set statusline=%-3.3n\ %f%(\ %r%)%(\ %#WarningMsg#%m%0*%)%=(%l/%L,\ %c)\ %P\ [%{&encoding}:%{&fileformat}]%(\ %w%)\ %y
 
 " }}}
 " {{{ Swap
+" Turn swap off
 set noswapfile
 
 " }}}
 " {{{ Syntastic
+" Use jshint (uses ~/.jshintrc)
 let g:syntastic_javascript_checker = "jshint"
+
+" On by default, turn it off for html
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['html'] }
