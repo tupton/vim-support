@@ -146,6 +146,11 @@ au FileType python set et sw=4 sts=4 ts=4 ai
 au FileType css setlocal equalprg=csstidy\ -\ --silent=true\ --preserve_css=true
 
 " }}}
+" {{{ Gundo
+" Open gundo history and preview
+nnoremap <F5> :GundoToggle<CR>
+
+" }}}
 " {{{ History
 " Command history
 set history=1000
