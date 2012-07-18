@@ -10,6 +10,12 @@ set hidden
 " Map leader to ,
 let mapleader = ","
 
+" Load filetype plugins and indents
+filetype plugin indent on
+
+" Omni completion
+set omnifunc=syntaxcomplete#Complete
+
 " }}}
 " {{{ Pathogen
 " Store pathogen itself in bundle/
@@ -119,9 +125,6 @@ set nowrap
 " Highlight the first column after the text width
 set colorcolumn=+1
 
-" Load filetype plugins and indents
-filetype plugin indent on
-
 " From the Vim docs:
 " t   Auto-wrap text using textwidth
 "
@@ -165,7 +168,7 @@ set history=1000
 " }}}
 " {{{ Key remaps
 " Completion
-inoremap <Nul> <C-x><C-p>
+inoremap <Nul> <C-X><C-O>
 
 " Edit and source this file
 nmap <silent> <leader>ev :split $MYVIMRC<CR>
