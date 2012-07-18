@@ -37,7 +37,7 @@ if has("autocmd")
     au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 
     " Automatically go to the last edited line on open
-    au BufReadPost * normal `"
+    au BufReadPost * silent normal `"
 
     " Only show cursorline in active windows
     au WinLeave * set nocursorline
