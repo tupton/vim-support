@@ -306,6 +306,9 @@ set noswapfile
 " Use jshint (uses ~/.jshintrc)
 let g:syntastic_javascript_checker = "jshint"
 
+" Use pyflakes
+let g:syntastic_python_checker = 'pyflakes'
+
 " On by default, turn it off for html
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
