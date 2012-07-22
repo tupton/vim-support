@@ -92,10 +92,10 @@ set termencoding=utf-8
 " {{{ Folding
 " Fold with triple curly braces, fill with spaces
 if has("folding")
-    set foldenable 
+    set foldenable
     set foldmethod=marker
     set foldopen=hor,mark,search,tag,undo
-    set fillchars=diff:\ ,fold:\ ,vert:\ 
+    set fillchars=diff:\ ,fold:\ ,vert:\
 endif
 
 hi Folded term=standout ctermfg=3 ctermbg=none
@@ -152,7 +152,7 @@ set colorcolumn=+1
 "         2. the second item
 set formatoptions+=t,c,r,o,n
 
-au FileType c,cpp,h set cindent formatoptions+=ro 
+au FileType c,cpp,h set cindent formatoptions+=ro
 au FileType xhtml,xml,html set tw=0
 au FileType make set noexpandtab shiftwidth=8
 au FileType python set et sw=4 sts=4 ts=4 ai
@@ -334,7 +334,7 @@ set undofile
 " max changes that can be undone
 set undolevels=1000
 
-" max lines to save for undo on buffer reload 
+" max lines to save for undo on buffer reload
 set undoreload=10000
 
 " }}}
