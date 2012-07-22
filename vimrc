@@ -61,8 +61,11 @@ if has("syntax")
 
     "silent! colorscheme hemisu
     "silent! colorscheme molokai
-    silent! colorscheme sahara
-    "silent! colorscheme solarized
+    "silent! colorscheme sahara
+
+    let g:solarized_termtrans = 1
+    let g:solarized_underline = 0
+    silent! colorscheme solarized
 endif
 
 " }}}
