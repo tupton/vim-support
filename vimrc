@@ -284,7 +284,6 @@ if has("extra_search")
 
     " Be smart about searching case-sensitively
     set smartcase
-    set ignorecase
 
     " Search as you type
     set incsearch
@@ -300,6 +299,13 @@ if has("spell")
     set spelllang=en_us
     nnoremap <leader>sp :set spell!<CR>
 endif
+
+" }}}
+" {{{ Splits
+
+" Intuitive split locations
+set splitbelow
+set splitright
 
 " }}}
 " {{{ Status line
