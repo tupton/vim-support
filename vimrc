@@ -187,6 +187,15 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
+" Annoyances
+
+" Use :help instead
+nnoremap <F1> <nop>
+" No ex mode
+nnoremap Q <nop>
+" No man pages because I don't write C or many shell scripts
+nnoremap K <nop>
+
 " Tab navigation
 " nmap <F4> :tabnew<CR>
 " nmap <F5> :tabp<CR>
