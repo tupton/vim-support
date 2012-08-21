@@ -284,6 +284,7 @@ if has("extra_search")
 
     " Be smart about searching case-sensitively
     set smartcase
+    set ignorecase
 
     " Search as you type
     set incsearch
