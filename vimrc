@@ -323,7 +323,7 @@ set noswapfile
 " }}}
 " {{{ Syntastic
 " Use jshint (uses ~/.jshintrc)
-let g:syntastic_javascript_checker = "jshint"
+let g:syntastic_javascript_checker = 'jshint'
 
 " Use pyflakes
 let g:syntastic_python_checker = 'pyflakes'
