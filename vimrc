@@ -332,6 +332,13 @@ let g:syntastic_python_checker = 'pyflakes'
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['html'] }
+
+" Better :sign interface symbols
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '!'
+
+" Check on buffer open
+let g:syntastic_check_on_open = 1
 " }}}
 " {{{ Terminal
 
