@@ -325,8 +325,9 @@ set noswapfile
 " Use jshint (uses ~/.jshintrc)
 let g:syntastic_javascript_checker = 'jshint'
 
-" Use pyflakes
-let g:syntastic_python_checker = 'pyflakes'
+" Use flake8
+let g:syntastic_python_checker = 'flake8'
+let g:syntastic_python_checker_args = '--ignore="E501,E302,E261,E701,E241,E126,E127,E128,W801"'
 
 " On by default, turn it off for html
 let g:syntastic_mode_map = { 'mode': 'active',
