@@ -22,3 +22,6 @@
 [submodule "bundle/vim-clojure"]
 	path = bundle/vim-clojure
 	url = https://github.com/vim-scripts/VimClojure.git
+[submodule "bundle/characterize"]
+	path = bundle/characterize
+	url = https://github.com/tpope/vim-characterize.git
