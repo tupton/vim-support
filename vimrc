@@ -230,6 +230,7 @@ nnoremap K <no>
 " {{{ List
 " Toggle invisibles, hide by default
 set nolist
+set listchars=eol:¶,tab:»·,trail:·,extends:>,precedes:<
 nnoremap <leader>l :set list!<CR>
 
 " }}}
