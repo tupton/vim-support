@@ -25,3 +25,6 @@
 [submodule "bundle/characterize"]
 	path = bundle/characterize
 	url = https://github.com/tpope/vim-characterize.git
+[submodule "bundle/simpylfold"]
+	path = bundle/simpylfold
+	url = https://github.com/tmhedberg/SimpylFold.git
