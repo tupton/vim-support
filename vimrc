@@ -178,9 +178,9 @@ nmap <silent> <leader>ev :split $MYVIMRC<CR>
 nmap <silent> <leader>sv :source $MYVIMRC<CR>
 
 " Better window management and navigation
-map <Leader>w <C-w>w
-map <Leader>W <C-w>W
-map <Leader>_ <C-w>_
+map <leader>w <C-w>w
+map <leader>W <C-w>W
+map <leader>_ <C-w>_
 
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
@@ -227,6 +227,14 @@ noremap <F1> <nop>
 nnoremap K <no>
 
 " }}}
+" {{{ Line Numbers
+" Show line numbers
+set number
+nnoremap <leader>n :set number!<CR>
+nnoremap <leader>N :NumbersToggle<CR>
+
+
+" }}}
 " {{{ List
 " Toggle invisibles, hide by default
 set nolist
@@ -249,12 +257,6 @@ map <F7> :NERDTreeToggle<CR>
 
 " Change the working directory to the top NERDTree directory
 let NERDTreeChDirMode = 2
-
-" }}}
-" {{{ Numbers
-" Show line numbers
-set number
-nnoremap <leader>n :set number!<CR>
 
 " }}}
 " {{{ Paste
