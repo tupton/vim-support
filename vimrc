@@ -272,7 +272,7 @@ let g:Powerline_symbols = 'unicode'
 " {{{ Scrolling
 " Scrolling context; lines/columns of buffer while scrolling
 set scrolloff=3
-set sidescrolloff=3
+set sidescrolloff=5
 
 " Scrolling speed
 nnoremap <C-e> 5<C-e>
