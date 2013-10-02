@@ -330,7 +330,7 @@ let g:syntastic_javascript_checkers = ['jshint']
 
 " Use flake8
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args = '--ignore="E501,E302,E261,E701,E241,E126,E127,E128,W801"'
+let g:syntastic_python_flake8_args = '--ignore="E501,E302,E261,E701,E241,E126,E127,E128,E121,W801"'
 
 " On by default, turn it off for html
 let g:syntastic_mode_map = { 'mode': 'active',
