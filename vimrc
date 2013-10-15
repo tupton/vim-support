@@ -4,6 +4,10 @@
 " Of course
 set nocompatible
 
+" Set the terminal font encoding
+set encoding=utf-8
+set termencoding=utf-8
+
 " Manage multiple buffers
 set hidden
 
@@ -81,12 +85,6 @@ if has("cmdline_info")
     " Show which mode we're in
     set showmode
 endif
-
-" }}}
-" {{{ Encoding
-" Set the terminal font encoding
-set encoding=utf-8
-set termencoding=utf-8
 
 " }}}
 " {{{ Folding
