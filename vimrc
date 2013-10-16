@@ -71,9 +71,6 @@ let g:airline_mode_map = {
   \ '' : 'S',
   \ }
 
-" Disable modified detection since we're adding our own
-let g:airline_detect_modified = 0
-
 " Add a red '+' for modified buffers
 function! AirlineInit()
   call airline#parts#define_raw('modified', '%{&modified ? " +" : ""}')
