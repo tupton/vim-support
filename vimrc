@@ -36,6 +36,8 @@ let g:ackprg="ack --noenv -H --nocolor --nogroup --column --smart-case"
 
 " }}}
 " {{{ Airline
+
+" Unicode symbols for sections
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
@@ -50,6 +52,7 @@ let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.whitespace = 'Ξ'
 
+" Short mode letters
 if !exists('g:airline_mode_map')
     let g:airline_mode_map = {}
 endif
@@ -68,8 +71,17 @@ let g:airline_mode_map = {
   \ '' : 'S',
   \ }
 
-" Add red accent to modified flag
-let g:airline_section_c = '%<%f %#__accent_red#%m%#__restore__# %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#'
+" Disable modified detection since we're adding our own
+let g:airline_detect_modified = 0
+
+" Add a red '+' for modified buffers
+function! AirlineInit()
+  call airline#parts#define_raw('modified', '%{&modified ? " +" : ""}')
+  call airline#parts#define_accent('modified', 'red')
+  let g:airline_section_c = airline#section#create(['%f', 'modified'])
+endfunction
+autocmd VimEnter * call AirlineInit()
+
 " }}}
 " {{{ Autocommands
 if has("autocmd")
