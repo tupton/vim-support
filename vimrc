@@ -20,6 +20,9 @@ filetype plugin indent on
 " Omni completion
 set omnifunc=syntaxcomplete#Complete
 
+" More often updates for, e.g. signs.
+set updatetime=750
+
 " }}}
 " {{{ Pathogen
 " Store pathogen itself in bundle/
@@ -200,6 +203,14 @@ au FileType xhtml,xml,html set tw=0
 au FileType make set noexpandtab shiftwidth=8
 au FileType python set et sw=4 sts=4 ts=4 ai
 au FileType css setlocal equalprg=csstidy\ -\ --silent=true\ --preserve_css=true
+
+" }}}
+" {{{ gitgutter
+" Don't update in real time
+let g:gitgutter_realtime = 1
+
+" Only update on write, not on buffer enter/focus
+let g:gitgutter_eager = 0
 
 " }}}
 " {{{ Gundo
