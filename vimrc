@@ -283,10 +283,7 @@ nnoremap K <no>
 " }}}
 " {{{ Line Numbers
 " Show line numbers
-set number
-nnoremap <leader>n :set number!<CR>
-nnoremap <leader>N :NumbersToggle<CR>
-
+set relativenumber
 
 " }}}
 " {{{ List
