@@ -68,6 +68,8 @@ let g:airline_mode_map = {
   \ '' : 'S',
   \ }
 
+" Add red accent to modified flag
+let g:airline_section_c = '%<%f %#__accent_red#%m%#__restore__# %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#'
 " }}}
 " {{{ Autocommands
 if has("autocmd")
