@@ -77,7 +77,6 @@ let g:airline_mode_map = {
 " Add a red '+' for modified buffers
 function! AirlineInit()
   call airline#parts#define_raw('modified', '%{&modified ? " +" : ""}')
-  call airline#parts#define_accent('modified', 'red')
   let g:airline_section_c = airline#section#create(['%f', 'modified'])
 endfunction
 autocmd VimEnter * call AirlineInit()
