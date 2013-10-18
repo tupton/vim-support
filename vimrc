@@ -74,12 +74,20 @@ let g:airline_mode_map = {
   \ '' : 'S',
   \ }
 
-" Add a red '+' for modified buffers
+" Add a '+' for modified buffers
 function! AirlineInit()
   call airline#parts#define_raw('modified', '%{&modified ? " +" : ""}')
   let g:airline_section_c = airline#section#create(['%f', 'modified'])
 endfunction
 autocmd VimEnter * call AirlineInit()
+
+" Orange modified status
+function! AirlineThemeModified(palette)
+  let a:palette.normal_modified.airline_c =  ['#93a1a1', '#cb4b16', 254, 166, '']
+  let a:palette.insert_modified.airline_c =  ['#93a1a1', '#cb4b16', 254, 166, '']
+  let a:palette.visual_modified.airline_c =  ['#93a1a1', '#cb4b16', 254, 166, '']
+endfunction
+let g:airline_theme_patch_func = 'AirlineThemeModified'
 
 " }}}
 " {{{ Autocommands
