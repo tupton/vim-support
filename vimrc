@@ -86,6 +86,7 @@ function! AirlineThemeModified(palette)
   let a:palette.normal_modified.airline_c =  ['#93a1a1', '#cb4b16', 254, 166, '']
   let a:palette.insert_modified.airline_c =  ['#93a1a1', '#cb4b16', 254, 166, '']
   let a:palette.visual_modified.airline_c =  ['#93a1a1', '#cb4b16', 254, 166, '']
+  let a:palette.inactive_modified.airline_c =['#cb4b16', '', 166, '', '']
 endfunction
 let g:airline_theme_patch_func = 'AirlineThemeModified'
 
