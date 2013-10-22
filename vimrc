@@ -212,14 +212,6 @@ au FileType python set et sw=4 sts=4 ts=4 ai
 au FileType css setlocal equalprg=csstidy\ -\ --silent=true\ --preserve_css=true
 
 " }}}
-" {{{ gitgutter
-" Don't update in real time
-let g:gitgutter_realtime = 1
-
-" Only update on write, not on buffer enter/focus
-let g:gitgutter_eager = 0
-
-" }}}
 " {{{ Gundo
 " Open gundo history and preview
 nnoremap <F5> :GundoToggle<CR>
