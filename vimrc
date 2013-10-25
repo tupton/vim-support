@@ -236,16 +236,6 @@ inoremap <Nul> <C-X><C-P>
 nmap <silent> <leader>ev :split $MYVIMRC<CR>
 nmap <silent> <leader>sv :source $MYVIMRC<CR>
 
-" Better window management and navigation
-map <leader>w <C-w>w
-map <leader>W <C-w>W
-map <leader>_ <C-w>_
-
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-
 " Annoyances
 
 " Use :help instead
@@ -450,6 +440,20 @@ if has("wildmenu")
     endif
 endif
 
+" }}}
+" {{{ Windows
+" Split windows below and right -- default is above and left, which can be disorienting
+set splitbelow splitright
+
+" Better window management and navigation
+map <leader>w <C-w>w
+map <leader>W <C-w>W
+map <leader>_ <C-w>_
+
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
 " }}}
 
 " vim: fdm=marker
