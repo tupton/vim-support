@@ -363,6 +363,7 @@ set laststatus=2
 " {{{ Swap
 " Turn swap off
 set noswapfile
+set updatecount=0
 
 " }}}
 " {{{ Syntastic
