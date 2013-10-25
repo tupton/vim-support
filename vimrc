@@ -96,8 +96,12 @@ if has("autocmd")
     " Make coffeescript files on write
     au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 
-    " Automatically go to the last edited line on open
-    au BufReadPost * silent normal `"
+    " Jump to last cursor position unless it's invalid or in an event handler or
+    " a git commit
+    au BufReadPost *
+      \ if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal! g`\"" |
+      \ endif
 
     " Only show cursorline in active windows
     au WinLeave * set nocursorline
