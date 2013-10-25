@@ -291,7 +291,7 @@ set relativenumber
 " {{{ List
 " Toggle invisibles, hide by default
 set nolist
-set listchars=eol:¶,tab:»·,trail:·,extends:>,precedes:<
+set listchars=eol:¬,tab:▸·,trail:·,nbsp:_,extends:❯,precedes:❮
 nnoremap <leader>l :set list!<CR>
 
 " }}}
