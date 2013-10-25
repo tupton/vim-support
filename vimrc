@@ -206,6 +206,11 @@ set colorcolumn=+1
 "         2. the second item
 set formatoptions+=t,c,r,o,n
 
+" Delete comment character when joining commented lines
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j
+endif
+
 au FileType c,cpp,h set cindent formatoptions+=ro
 au FileType xhtml,xml,html set tw=0
 au FileType make set noexpandtab shiftwidth=8
