@@ -225,6 +225,15 @@ au FileType python set et sw=4 sts=4 ts=4 ai
 au FileType css setlocal equalprg=csstidy\ -\ --silent=true\ --preserve_css=true
 
 " }}}
+" {{{ Fugitive
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gl :Glog<cr>
+nnoremap <leader>gp :Git push<cr>
+nnoremap <leader>gs :Git status -sb<cr>
+
+" }}}
 " {{{ Gundo
 " Open gundo history and preview
 nnoremap <F5> :GundoToggle<CR>
