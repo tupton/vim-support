@@ -12,7 +12,7 @@ set termencoding=utf-8
 set hidden
 
 " Map leader to ,
-let mapleader = ","
+let mapleader=","
 
 " Load filetype plugins and indents
 filetype plugin indent on
