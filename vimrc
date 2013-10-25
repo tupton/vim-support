@@ -291,6 +291,9 @@ noremap <F1> <nop>
 " Disable trying to look up things that Google is better for
 nnoremap K <no>
 
+" Shortcuts for diff
+nnoremap <leader>dg :diffget<cr>
+nnoremap <leader>dp :diffput<cr>
 " }}}
 " {{{ Line Numbers
 " Show line numbers
