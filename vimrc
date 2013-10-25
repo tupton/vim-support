@@ -215,6 +215,9 @@ if v:version > 703 || v:version == 703 && has("patch541")
   set formatoptions+=j
 endif
 
+" Use only 1 space after "." when joining lines instead of 2
+set nojoinspaces
+
 au FileType c,cpp,h set cindent formatoptions+=ro
 au FileType xhtml,xml,html set tw=0
 au FileType make set noexpandtab shiftwidth=8
