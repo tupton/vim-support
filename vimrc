@@ -164,7 +164,7 @@ endif
 if has("folding")
     set foldenable
     set foldmethod=marker
-    set foldopen=hor,mark,search,tag,undo
+    set foldopen=hor,search,tag,undo
     set fillchars=diff:\ ,fold:\ ,vert:\
 endif
 
@@ -487,5 +487,3 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 " }}}
-
-" vim: fdm=marker
