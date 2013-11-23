@@ -20,7 +20,7 @@ filetype plugin indent on
 " Omni completion
 set omnifunc=syntaxcomplete#Complete
 
-" More often updates for, e.g. signs.
+" More frequent updates for, e.g. signs.
 set updatetime=750
 
 " }}}
