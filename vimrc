@@ -93,6 +93,9 @@ let g:airline_theme_patch_func = 'AirlineThemeModified'
 " }}}
 " {{{ Autocommands
 if has("autocmd")
+    " Clear existing autocommands before defining them, in case this file is loaded again
+    autocmd!
+
     " Make coffeescript files on write
     au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 
