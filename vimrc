@@ -109,6 +109,15 @@ if has("autocmd")
     " Only show cursorline in active windows
     au WinLeave * set nocursorline
     au WinEnter * set cursorline
+
+    function! JavaScriptFold()
+        if &ft == "javascript"
+            set foldmethod=syntax
+            set foldlevelstart=1
+            syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
+        endif
+    endfunction
+    au VimEnter * call JavaScriptFold()
 endif
 
 " }}}
