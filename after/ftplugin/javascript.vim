@@ -1,0 +1,2 @@
+setl foldnestmax=2
+
