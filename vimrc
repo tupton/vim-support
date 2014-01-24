@@ -222,10 +222,11 @@ endif
 set nojoinspaces
 
 au FileType c,cpp,h set cindent formatoptions+=ro
-au FileType xhtml,xml,html set tw=0
+au FileType xhtml,xml,html set textwidth=0
 au FileType make set noexpandtab shiftwidth=8
-au FileType python set et sw=4 sts=4 ts=4 ai
+au FileType python set expandtab shiftwidth=4 softtabstop=4 tabstop=4 autoindent
 au FileType css setlocal equalprg=csstidy\ -\ --silent=true\ --preserve_css=true
+au FileType javascript set tabstop=4 shiftwidth=4 expandtab textwidth=100
 
 " }}}
 " {{{ Fugitive
