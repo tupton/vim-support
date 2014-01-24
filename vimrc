@@ -35,7 +35,7 @@ silent! call pathogen#helptags()
 " }}}
 " {{{ Ack
 " Skip normal config, show filenames, no color, one result per line, show column numbers, smart case
-let g:ackprg="ack --noenv -H --nocolor --nogroup --column --smart-case"
+let g:ackprg="ack --noenv -H --nocolor --nogroup --column --smart-case --after=0 --before=0"
 
 " }}}
 " {{{ Airline
