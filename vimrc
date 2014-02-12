@@ -1,8 +1,51 @@
 " .vimrc
 
-" {{{ Setup
+" {{{ Vundle
 " Of course
 set nocompatible
+
+" Required Vundle setup
+filetype off
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+" :Ack
+Bundle 'mileszs/ack.vim'
+
+" Better status line
+Bundle 'bling/vim-airline'
+
+" ga for character descriptions
+Bundle 'tpope/vim-characterize'
+
+" :Gdiff, :Gcommit, etc.
+Bundle 'tpope/vim-fugitive'
+
+" Markdown syntax
+Bundle 'tpope/vim-markdown'
+
+" Python syntax folding
+Bundle 'tmhedberg/SimpylFold'
+
+" Completion for everything with <Tab>
+Bundle 'ervandew/supertab'
+
+" Clojure syntax
+Bundle 'vim-scripts/VimClojure'
+
+" Solarized theme
+Bundle 'altercation/vim-colors-solarized'
+
+" Somewhat improved Javascript syntax
+Bundle 'jelera/vim-javascript-syntax'
+
+" Load filetype plugins and indents; required after Vundle
+filetype plugin indent on
+
+" }}}
+" {{{ Setup
 
 " Set the terminal font encoding
 set encoding=utf-8
@@ -14,23 +57,11 @@ set hidden
 " Map leader to ,
 let mapleader=","
 
-" Load filetype plugins and indents
-filetype plugin indent on
-
 " Omni completion
 set omnifunc=syntaxcomplete#Complete
 
 " More frequent updates for, e.g. signs.
 set updatetime=750
-
-" }}}
-" {{{ Pathogen
-" Store pathogen itself in bundle/
-runtime! bundle/pathogen/autoload/pathogen.vim
-
-" Start it up
-silent! call pathogen#infect()
-silent! call pathogen#helptags()
 
 " }}}
 " {{{ Ack
