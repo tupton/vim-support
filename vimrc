@@ -41,6 +41,9 @@ Bundle 'altercation/vim-colors-solarized'
 " Somewhat improved Javascript syntax
 Bundle 'jelera/vim-javascript-syntax'
 
+" Fuzzy finding
+Bundle 'kien/ctrlp.vim'
+
 " Load filetype plugins and indents; required after Vundle
 filetype plugin indent on
 
@@ -179,6 +182,10 @@ if has("cmdline_info")
     " Show which mode we're in
     set showmode
 endif
+
+" }}}
+" {{{ CtrlP
+let g:ctrlp_map = '<c-p>'
 
 " }}}
 " {{{ Folding
