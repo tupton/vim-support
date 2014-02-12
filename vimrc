@@ -26,6 +26,9 @@ Bundle 'tpope/vim-fugitive'
 " Markdown syntax
 Bundle 'tpope/vim-markdown'
 
+" Add support for github-style fenced codeblocks in markdown
+Bundle "jtratner/vim-flavored-markdown.git"
+
 " Python syntax folding
 Bundle 'tmhedberg/SimpylFold'
 
@@ -130,9 +133,6 @@ if has("autocmd")
     " Clear existing autocommands before defining them, in case this file is loaded again
     autocmd!
 
-    " Make coffeescript files on write
-    au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
-
     " Jump to last cursor position unless it's invalid or in an event handler or
     " a git commit
     au BufReadPost *
@@ -143,6 +143,20 @@ if has("autocmd")
     " Only show cursorline in active windows
     au WinLeave * set nocursorline
     au WinEnter * set cursorline
+
+    augroup coffescript
+        au!
+
+        " Make coffeescript files on write
+        au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
+    augroup END
+
+    augroup markdown
+        au!
+
+        " Automatically use github-flavored markdown
+        au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+    augroup END
 endif
 
 " }}}
