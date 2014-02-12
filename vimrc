@@ -141,8 +141,8 @@ if has("autocmd")
       \ endif
 
     " Only show cursorline in active windows
-    au WinLeave * set nocursorline
-    au WinEnter * set cursorline
+    au WinLeave * set nocursorline colorcolumn=""
+    au WinEnter * set cursorline colorcolumn=+1
 
     augroup coffescript
         au!
