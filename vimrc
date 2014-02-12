@@ -35,6 +35,9 @@ Bundle 'tmhedberg/SimpylFold'
 " Completion for everything with <Tab>
 Bundle 'ervandew/supertab'
 
+" Syntax, linting, etc.
+Bundle 'scrooloose/syntastic'
+
 " Clojure syntax
 Bundle 'vim-scripts/VimClojure'
 
@@ -47,7 +50,6 @@ Bundle 'jelera/vim-javascript-syntax'
 " Fuzzy finding
 Bundle 'kien/ctrlp.vim'
 
-" Load filetype plugins and indents; required after Vundle
 filetype plugin indent on
 
 " }}}
