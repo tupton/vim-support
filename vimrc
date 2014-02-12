@@ -302,6 +302,7 @@ nnoremap <leader>dp :diffput<cr>
 " {{{ Line Numbers
 " Show line numbers
 set relativenumber
+set number
 
 " }}}
 " {{{ List
