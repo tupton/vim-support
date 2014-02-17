@@ -147,16 +147,24 @@ if has("autocmd")
     " Clear existing autocommands before defining them, in case this file is loaded again
     autocmd!
 
-    " Jump to last cursor position unless it's invalid or in an event handler or
-    " a git commit
-    au BufReadPost *
-      \ if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$") |
-      \   exe "normal! g`\"" |
-      \ endif
+    augroup last_cursor
+        au!
 
-    " Only show cursorline in active windows
-    au WinLeave * set nocursorline colorcolumn=""
-    au WinEnter * set cursorline colorcolumn=+1
+        " Jump to last cursor position unless it's invalid or in an event handler or
+        " a git commit
+        au BufReadPost *
+          \ if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$") |
+          \   exe "normal! g`\"" |
+          \ endif
+    augroup END
+
+    augroup cursor_highlight
+        au!
+
+        " Only show cursorline in active windows
+        au WinLeave * set nocursorline colorcolumn=""
+        au WinEnter * set cursorline colorcolumn=+1
+    augroup
 
     augroup coffescript
         au!
