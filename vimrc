@@ -50,6 +50,18 @@ Bundle 'jelera/vim-javascript-syntax'
 " Fuzzy finding
 Bundle 'kien/ctrlp.vim'
 
+" Comment with gc
+Bundle 'tpope/vim-commentary'
+
+" Amazing mappings
+Bundle 'tpope/vim-unimpaired'
+
+" Repeat things
+Bundle 'tpope/vim-repeat'
+
+" JSON pretty printing with gqaj
+Bundle 'tpope/vim-jdaddy'
+
 filetype plugin indent on
 
 " }}}
