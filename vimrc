@@ -27,7 +27,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 
 " Add support for github-style fenced codeblocks in markdown
-Bundle "jtratner/vim-flavored-markdown.git"
+Bundle 'jtratner/vim-flavored-markdown.git'
 
 " Python syntax folding
 Bundle 'tmhedberg/SimpylFold'
