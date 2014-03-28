@@ -47,6 +47,9 @@ Bundle 'altercation/vim-colors-solarized'
 " Somewhat improved Javascript syntax
 Bundle 'pangloss/vim-javascript'
 
+" JSON syntax highlighting
+Bundle 'leshill/vim-json'
+
 " Fuzzy finding
 Bundle 'kien/ctrlp.vim'
 
