@@ -9,61 +9,61 @@ filetype off
 set runtimepath+=~/.vim/bundle/vundle
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " :Ack
-Bundle 'mileszs/ack.vim'
+Plugin 'mileszs/ack.vim'
 
 " Better status line
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 
 " ga for character descriptions
-Bundle 'tpope/vim-characterize'
+Plugin 'tpope/vim-characterize'
 
 " :Gdiff, :Gcommit, etc.
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
 " Markdown syntax
-Bundle 'tpope/vim-markdown'
+Plugin 'tpope/vim-markdown'
 
 " Add support for github-style fenced codeblocks in markdown
-Bundle 'jtratner/vim-flavored-markdown.git'
+Plugin 'jtratner/vim-flavored-markdown.git'
 
 " Python syntax folding
-Bundle 'tmhedberg/SimpylFold'
+Plugin 'tmhedberg/SimpylFold'
 
 " Completion for everything with <Tab>
-Bundle 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 
 " Syntax, linting, etc.
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 " Clojure syntax
-Bundle 'vim-scripts/VimClojure'
+Plugin 'vim-scripts/VimClojure'
 
 " Solarized theme
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 
 " Somewhat improved Javascript syntax
-Bundle 'pangloss/vim-javascript'
+Plugin 'pangloss/vim-javascript'
 
 " JSON syntax highlighting
-Bundle 'leshill/vim-json'
+Plugin 'leshill/vim-json'
 
 " Fuzzy finding
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 
 " Comment with gc
-Bundle 'tpope/vim-commentary'
+Plugin 'tpope/vim-commentary'
 
 " Amazing mappings
-Bundle 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-unimpaired'
 
 " Repeat things
-Bundle 'tpope/vim-repeat'
+Plugin 'tpope/vim-repeat'
 
 " JSON pretty printing with gqaj
-Bundle 'tpope/vim-jdaddy'
+Plugin 'tpope/vim-jdaddy'
 
 filetype plugin indent on
 
