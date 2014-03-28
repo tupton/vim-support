@@ -65,6 +65,9 @@ Plugin 'tpope/vim-repeat'
 " JSON pretty printing with gqaj
 Plugin 'tpope/vim-jdaddy'
 
+" git runtime files - highlight git config, commit, etc.
+Plugin 'tpope/vim-git'
+
 filetype plugin indent on
 
 " }}}
