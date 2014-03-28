@@ -45,7 +45,7 @@ Bundle 'vim-scripts/VimClojure'
 Bundle 'altercation/vim-colors-solarized'
 
 " Somewhat improved Javascript syntax
-Bundle 'jelera/vim-javascript-syntax'
+Bundle 'pangloss/vim-javascript'
 
 " Fuzzy finding
 Bundle 'kien/ctrlp.vim'
