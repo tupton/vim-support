@@ -6,10 +6,10 @@ set nocompatible
 
 " Required Vundle setup
 filetype off
-set runtimepath+=~/.vim/bundle/vundle
-call vundle#rc()
+set runtimepath+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " :Ack
 Plugin 'mileszs/ack.vim'
@@ -68,6 +68,7 @@ Plugin 'tpope/vim-jdaddy'
 " git runtime files - highlight git config, commit, etc.
 Plugin 'tpope/vim-git'
 
+call vundle#end()
 filetype plugin indent on
 
 " }}}
