@@ -232,6 +232,9 @@ endif
 let g:ctrlp_map = '<c-p>'
 
 " }}}
+" {{{ Diff
+set diffopt+=vertical
+" }}}
 " {{{ Folding
 " Fold with triple curly braces, fill with spaces
 if has("folding")
