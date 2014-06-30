@@ -148,6 +148,7 @@ function! AirlineThemeModified(palette)
 endfunction
 let g:airline_theme_patch_func = 'AirlineThemeModified'
 
+let g:airline#extensions#tabline#enabled = 1
 " }}}
 " {{{ Autocommands
 if has("autocmd")
