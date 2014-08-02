@@ -68,6 +68,9 @@ Plugin 'tpope/vim-jdaddy'
 " git runtime files - highlight git config, commit, etc.
 Plugin 'tpope/vim-git'
 
+" Inline git status
+Plugin 'airblade/vim-gitgutter'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -303,6 +306,22 @@ nnoremap <leader>gl :Glog<cr>
 nnoremap <leader>gp :Git push<cr>
 nnoremap <leader>gs :Git status -sb<cr>
 
+" }}}
+" {{{ git-gutter
+" Escape grep so we don't have color codes
+let g:gitgutter_escape_grep = 1
+
+" Ignore whitespace (we have other plugins for that)
+let g:gitgutter_diff_args = '-w'
+
+" Don't map any keys by default
+let g:gitgutter_map_keys = 0
+
+highlight SignColumn ctermbg=0
+highlight link GitGutterAdd DiffAdd
+highlight link GitGutterChange DiffChange
+highlight link GitGutterDelete DiffDelete
+highlight link GitGutterChangeDelete DiffDelete
 " }}}
 " {{{ History
 " Command history
