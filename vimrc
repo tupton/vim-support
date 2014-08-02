@@ -99,19 +99,8 @@ let g:ackprg="ack --noenv -H --nocolor --nogroup --column --smart-case --after=0
 " {{{ Airline
 
 " Unicode symbols for sections
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-let g:airline_left_sep = '⮀'
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
-let g:airline_symbols.branch = '⭠'
-let g:airline_symbols.readonly = '⭤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.whitespace = 'Ξ'
+" The patched source code pro font provides these symbols
+let g:airline_powerline_fonts = 1
 
 " Short mode letters
 if !exists('g:airline_mode_map')
@@ -131,13 +120,6 @@ let g:airline_mode_map = {
   \ 'S'  : 'S',
   \ '' : 'S',
   \ }
-
-" Add a '+' for modified buffers
-function! AirlineInit()
-  call airline#parts#define_raw('modified', '%{&modified ? " +" : ""}')
-  let g:airline_section_c = airline#section#create(['%f', 'modified'])
-endfunction
-autocmd VimEnter * call AirlineInit()
 
 " Orange modified status
 function! AirlineThemeModified(palette)
@@ -320,11 +302,6 @@ nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gl :Glog<cr>
 nnoremap <leader>gp :Git push<cr>
 nnoremap <leader>gs :Git status -sb<cr>
-
-" }}}
-" {{{ Gundo
-" Open gundo history and preview
-nnoremap <F5> :GundoToggle<CR>
 
 " }}}
 " {{{ History
