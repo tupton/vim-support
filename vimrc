@@ -317,7 +317,7 @@ let g:gitgutter_diff_args = '-w'
 " Don't map any keys by default
 let g:gitgutter_map_keys = 0
 
-highlight SignColumn ctermbg=0
+highlight link SignColumn LineNr
 highlight link GitGutterAdd DiffAdd
 highlight link GitGutterChange DiffChange
 highlight link GitGutterDelete DiffDelete
