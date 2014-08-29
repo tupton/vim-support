@@ -32,9 +32,6 @@ Plugin 'jtratner/vim-flavored-markdown.git'
 " Python syntax folding
 Plugin 'tmhedberg/SimpylFold'
 
-" Completion for everything with <Tab>
-Plugin 'ervandew/supertab'
-
 " Syntax, linting, etc.
 Plugin 'scrooloose/syntastic'
 
@@ -73,6 +70,12 @@ Plugin 'airblade/vim-gitgutter'
 
 " Coffeescript
 Plugin 'kchmck/vim-coffee-script'
+
+" YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
+
+" TernJS
+Plugin 'marijnh/tern_for_vim'
 
 call vundle#end()
 
