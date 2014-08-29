@@ -71,7 +71,12 @@ Plugin 'tpope/vim-git'
 " Inline git status
 Plugin 'airblade/vim-gitgutter'
 
+" Coffeescript
+Plugin 'kchmck/vim-coffee-script'
+
 call vundle#end()
+
+syntax enable
 filetype plugin indent on
 
 " }}}
@@ -162,8 +167,8 @@ if has("autocmd")
     augroup coffescript
         au!
 
-        " Make coffeescript files on write
-        au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
+        " Automatically set coffeescript filetype; necessary because of some vundle filetype issue
+        au BufNewFile,BufRead *.coffee setlocal filetype=coffee
     augroup END
 
     augroup markdown
@@ -180,22 +185,6 @@ endif
 set nobackup
 if has("writebackup")
     set nowritebackup
-endif
-
-" }}}
-" {{{ Colors
-if has("syntax")
-    syntax enable
-
-    set background=dark
-
-    "silent! colorscheme hemisu
-    "silent! colorscheme molokai
-    "silent! colorscheme sahara
-
-    let g:solarized_termtrans = 1
-    let g:solarized_underline = 0
-    silent! colorscheme solarized
 endif
 
 " }}}
@@ -228,8 +217,6 @@ if has("folding")
     set foldopen=hor,search,tag,undo
     set fillchars=diff:\ ,fold:\ ,vert:\
 endif
-
-hi Folded term=standout ctermfg=3 ctermbg=none
 
 " }}}
 " {{{ Formatting
@@ -317,11 +304,6 @@ let g:gitgutter_diff_args = '-w'
 " Don't map any keys by default
 let g:gitgutter_map_keys = 0
 
-highlight link SignColumn LineNr
-highlight link GitGutterAdd DiffAdd
-highlight link GitGutterChange DiffChange
-highlight link GitGutterDelete DiffDelete
-highlight link GitGutterChangeDelete DiffDelete
 " }}}
 " {{{ History
 " Command history
@@ -559,4 +541,26 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
+" }}}
+
+" {{{ Epilog
+" Turn syntax on after everything else
+syntax on
+
+" {{{ Colors
+set background=dark
+
+let g:solarized_termtrans = 1
+let g:solarized_underline = 0
+silent! colorscheme solarized
+
+hi Folded term=standout ctermfg=3 ctermbg=none
+
+highlight link SignColumn LineNr
+highlight link GitGutterAdd DiffAdd
+highlight link GitGutterChange DiffChange
+highlight link GitGutterDelete DiffDelete
+highlight link GitGutterChangeDelete DiffDelete
+
+" }}}
 " }}}
