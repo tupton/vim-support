@@ -307,6 +307,9 @@ let g:gitgutter_diff_args = '-w'
 " Don't map any keys by default
 let g:gitgutter_map_keys = 0
 
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
+
 " }}}
 " {{{ History
 " Command history
