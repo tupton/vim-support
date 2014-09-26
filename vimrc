@@ -77,6 +77,9 @@ Plugin 'Valloric/YouCompleteMe'
 " TernJS
 Plugin 'marijnh/tern_for_vim'
 
+" Open current Markdown buffer in Marked2
+Plugin 'itspriddle/vim-marked'
+
 call vundle#end()
 
 syntax enable
