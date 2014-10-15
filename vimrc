@@ -250,7 +250,9 @@ set textwidth=100
 set nowrap
 
 " Highlight the first column after the text width
-set colorcolumn=+1
+if exists("&colorcolumn")
+    set colorcolumn=+1
+endif
 
 " From the Vim docs:
 " t   Auto-wrap text using textwidth
@@ -373,7 +375,9 @@ nnoremap <leader>dp :diffput<cr>
 " {{{ Line Numbers
 " Show line numbers
 set number
-set relativenumber
+if exists("relativenumber")
+    set relativenumber
+endif
 
 " }}}
 " {{{ List
@@ -492,14 +496,16 @@ set visualbell t_vb=
 " }}}
 " {{{ Undo
 " -- see http://amix.dk/blog/post/19548
-set undodir=~/.vim/undodir
-set undofile
+if has("persistent_undo")
+    set undodir=~/.vim/undodir
+    set undofile
 
-" max changes that can be undone
-set undolevels=1000
+    " max changes that can be undone
+    set undolevels=1000
 
-" max lines to save for undo on buffer reload
-set undoreload=10000
+    " max lines to save for undo on buffer reload
+    set undoreload=10000
+endif
 
 " }}}
 " {{{ Utility
