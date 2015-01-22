@@ -336,6 +336,16 @@ nnoremap Q <nop>
 " No man pages because I don't write C or many shell scripts
 nnoremap K <nop>
 
+" No arrow keys
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+
 " Tab navigation
 " nmap <F4> :tabnew<CR>
 " nmap <F5> :tabp<CR>
