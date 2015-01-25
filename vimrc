@@ -385,7 +385,7 @@ nnoremap <leader>dp :diffput<cr>
 " {{{ Line Numbers
 " Show line numbers
 set number
-if exists("relativenumber")
+if exists("&relativenumber")
     set relativenumber
 endif
 
